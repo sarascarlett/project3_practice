@@ -29,7 +29,7 @@ const dataSource = [
         data={classes}
         extraData={classes}
         renderItem={({item}) => 
-        <TouchableOpacity style = {styles.border} onPress={() => {navigation.navigate('Add Review', {title: item.title, 
+        <TouchableOpacity style = {styles.border} onPress={() => {navigation.navigate('Details', {title: item.title, 
           releaseYear: item.courseCode});}}>
               <Text style={styles.item}>{item.title}</Text>
         </TouchableOpacity> 
