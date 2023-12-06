@@ -4,17 +4,25 @@ import { firestore } from "./firebase";
 import Review from './Review';
 import { addDoc, collection } from "@firebase/firestore";
 
-function RentalDetails({id,name, pic, description, size}) {
+function ClassDetails({id,name, pic, description, size}) {
   //state variable to hold the review entered into the textarea
   //needs to be state variable because it updates every time the user enters a keyboard stroke
   const [review, setReview] = useState("");
+  const myCollection = collection(firestore, 'Collection');
+
   
   /* Save the review to Firestore */
   function handleSubmit(e) {
     //this function prevents any default behavior the browser may have to a particular event.
-    e.preventDefault();
+    const data = {
+        id: id,
+        review: review
+    };
+    addDoc(myCollection, data);
+   e.preventDefault();
     
-}
+  }
+
   return (
     <div className="App">
       <div>
@@ -43,7 +51,7 @@ function RentalDetails({id,name, pic, description, size}) {
         <textarea name="review" rows="4" cols="50"
            value={review} onChange={(event)=>setReview(event.target.value)}></textarea>
        <br></br>
-        <button type = "submit">Review</button>
+        <button>Review</button>
       </form>
       {/* The Reviews component is called with an id. 
           The Reviews component displays all of the reviews for a property with the given id. */}
@@ -52,4 +60,4 @@ function RentalDetails({id,name, pic, description, size}) {
   );
 }
 
-export default RentalDetails;
+export default ClassDetails;

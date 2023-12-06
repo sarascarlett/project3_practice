@@ -7,7 +7,7 @@ import {
     getDocs,
 } from 'firebase/firestore';
 
-export default function Reviews({id}) {  
+export default function Review({id}) {  
     /*The state variable hold the array of reviews fetched from the Firestore database */
     const [reviews, setReviews]=useState([]); 
 
@@ -23,7 +23,7 @@ export default function Reviews({id}) {
     async function fetchReviews() {    
         //query the collection reviews from our firestore instance
         //get only the reviews for the given id
-        const q = query(collection(firestore, "reviews"), where("id", "==", id));
+        const q = query(collection(firestore, "Collection"), where("id", "==", id));
         //an array of documents with the reviews are returned
         const querySnapshot = await getDocs(q);
         const r=[]
@@ -31,7 +31,7 @@ export default function Reviews({id}) {
         //it calls a function for each element in an array
         //it doesn't return a new array with the results like map does
         querySnapshot.forEach((doc) => {
-            r.push(doc.data().content);
+            r.push(doc.data().review);
         });
         /* This is called spread syntax it adds the array r to the reviews array */
         //setReviews([...reviews , ...r]);   
