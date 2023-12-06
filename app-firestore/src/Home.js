@@ -1,4 +1,5 @@
-const Home = ({ navigation }) => {
+export default function ListOfPeople() {
+
 
     const dataSource = [
         { title: "Algorithms and Data Structures I ", courseCode: "CSC 1051" },
@@ -16,7 +17,18 @@ const Home = ({ navigation }) => {
         { title: "Software Engineering", courseCode: "CSC 4700" },
         { title: "Senior Project", courseCode: "CSC 4790" },
     
-      ];
-    }
+    ];
+
+    var listOfClasses =  dataSource.map(classTitle => <li> {classTitle} </li>);
+
+    return (
+        <div>
+            <li>
+                {listOfClasses}
+            </li>
+        </div>
+    );
     
-    export default Home;
+   
+
+}
