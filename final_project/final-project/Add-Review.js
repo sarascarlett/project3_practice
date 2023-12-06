@@ -11,7 +11,7 @@ export default function AddReview({ navigation }) {
             style={{height: 40,
             borderColor: 'gray',
             borderWidth: 1}}
-            placeholder="Enter the title for your review"
+            placeholder="Write the title for your review here"
             onChangeText={(newText)=>{
               setTitle(newText);
             }}
