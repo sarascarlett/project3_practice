@@ -15,17 +15,22 @@ export default function ListOfPeople() {
         { title: "Theory of Computation", courseCode: "CSC 4480" },
         { title: "Database Systems ", courseCode: "CSC 2405" },
         { title: "Software Engineering", courseCode: "CSC 4700" },
-        { title: "Senior Project", courseCode: "CSC 4790" },
+        { title: "Senior Project", courseCode: "CSC 4790" }
     
     ];
 
-    var listOfClasses =  dataSource.map(classTitle => <li> {classTitle} </li>);
+    var listOfClasses =  dataSource.map(course => 
+    <ul>
+        <li> {course.title} </li>
+        <li> {course.courseCode} </li>
+    </ul>);
+
 
     return (
         <div>
-            <li>
+            <ul>
                 {listOfClasses}
-            </li>
+            </ul>
         </div>
     );
     
