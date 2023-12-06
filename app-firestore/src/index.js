@@ -12,8 +12,7 @@ var rentalInfo = {name: 'Casa Era Ora', pic: "https://a0.muscache.com/im/picture
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-     <ClassDetails id={rentalInfo.id} name={rentalInfo.name} pic={rentalInfo.pic} 
-      description={rentalInfo.description} size={rentalInfo.size} /> 
+      description={rentalInfo.description} size={rentalInfo.size}
   </React.StrictMode> 
 );
 
