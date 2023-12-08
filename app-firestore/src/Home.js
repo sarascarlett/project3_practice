@@ -1,6 +1,4 @@
-export default function ListOfPeople() {
-
-
+export default function ListOfClasses() {
     const dataSource = [
         { title: "Algorithms and Data Structures I ", courseCode: "CSC 1051" },
         { title: "The Enrichment Seminar", courseCode: "CSC 1990" },
@@ -16,13 +14,11 @@ export default function ListOfPeople() {
         { title: "Database Systems ", courseCode: "CSC 2405" },
         { title: "Software Engineering", courseCode: "CSC 4700" },
         { title: "Senior Project", courseCode: "CSC 4790" }
-    
     ];
 
     var listOfClasses =  dataSource.map(course => 
     <ul>
-        <li> {course.title} </li>
-        <li> {course.courseCode} </li>
+        <li> {course.courseCode} : {course.title}  </li>
     </ul>);
 
 

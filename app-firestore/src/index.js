@@ -5,15 +5,13 @@ import ClassDetails from './ClassDetails';
 import Review from './Review';
 import Home from './Home';
 import reportWebVitals from './reportWebVitals';
+import ListOfClasses from './Home';
 
-var rentalInfo = {name: 'Casa Era Ora', pic: "https://a0.muscache.com/im/pictures/3542b90c-d817-44ef-a4df-fef3578b2735.jpg?im_w=960",
-  description: 'Entire home hosted by Marco',
-  size: '6 guests 3 bedrooms 2 baths', id: 'bprxyx' };  
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-      <Home />
+      <ListOfClasses />
   </React.StrictMode> 
 );
 
