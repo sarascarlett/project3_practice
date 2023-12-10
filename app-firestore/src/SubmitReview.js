@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { firestore } from "./firebase";
 import Review from './Review';
 import { addDoc, collection } from "@firebase/firestore";
+import Button from 'react-bootstrap/Button';
+
 
 function SubmitReview() {
     //state variable to hold the review entered into the textarea
@@ -39,7 +41,7 @@ function SubmitReview() {
          <br></br>
          <textarea name="Review" rows="4" cols="50"
              value={review} onChange={(event)=>setReview(event.target.value)}></textarea>
-          <button>Submit Review</button>
+          <Button>Submit Review</Button>
         </form>
         {/* The Reviews component is called with an id. 
             The Reviews component displays all of the reviews for a property with the given id. */}

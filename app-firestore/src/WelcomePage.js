@@ -3,6 +3,7 @@ import { firestore } from "./firebase";
 import { addDoc, collection} from "@firebase/firestore";
 import { useState,useEffect } from 'react';
 import Review from './Review';
+import Button from 'react-bootstrap/Button';
 
 
  
@@ -25,7 +26,9 @@ const SubmitReview = () => {
     return (
         <div>
             <br></br>
-            <div id="submitReview">Submit a review for a CSC class</div>
+            <div id="submitReview">
+                <h2> Submit a Review for a CSC Class</h2>
+            </div>
             <br></br>
             <form onSubmit={handleSubmit}>
                 <label>
@@ -57,7 +60,7 @@ const SubmitReview = () => {
          </label>
         <br></br>
         <br></br>
-          <button>Submit Review</button>
+          <Button>Submit Review</Button>
         </form>
         <br></br>
         <br></br>
@@ -87,7 +90,7 @@ const AllReviews = () => {
     var listOfClasses =  dataSource.map(course => 
         <div> 
             <div>
-                {course.courseCode} : {course.title}  
+                <h5>{course.courseCode} : {course.title}  </h5>
             </div>
             <div>
                 <Review code = {course.courseCode}/>
@@ -97,7 +100,9 @@ const AllReviews = () => {
 
     return ( 
         <div>
-            <div id="allReviews">All reviews</div>
+            <div id="allReviews">
+                <h2>All Reviews</h2>
+            </div>
             <br></br>
             {listOfClasses}
             <br></br>
@@ -127,7 +132,7 @@ const WelcomePage = () => {
     var listOfClasses =  dataSource.map(course => 
         <div> 
             <div>
-                {course.courseCode} : {course.title}  
+                {course.courseCode} : {course.title}
             </div>
             <div>
                 <Review code = {course.courseCode}/>

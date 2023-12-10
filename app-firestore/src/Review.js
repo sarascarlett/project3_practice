@@ -44,7 +44,9 @@ export default function Review({code}) {
          { /* Use the map function to display the reviews in the reviews array  */ }
         {
                 reviews.map((review) =>
-                 <p>{review}</p>)
+                 <li>
+                    {review}
+                 </li>)
         }
         </div>
         
