@@ -1,33 +1,27 @@
-
-import { useNavigate } from "react-router-dom";
-
-// import Home component
-import Home from "./Home";
-// import About component
-import ClassDetails from "./ClassDetails";
-// import ContactUs component
-import Review from "./Review";
+import logo from './logo.svg';
+import './App.css';
+import AnchorLink from "react-anchor-link-smooth-scroll"
+import "./App.css";
+import ListOfClasses from './Home';
+import WelcomePage from './WelcomePage';
 
 function App() {
-  const navigate = useNavigate();
   return (
-<div className="App">
-      <header className="App-header">
-        <img className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App">
+      <div align = "left">
+        <ListOfClasses></ListOfClasses>
+      </div>
+        <div> 
+            <AnchorLink href="#submitReview">
+                <button>Submit a Review</button>
+            </AnchorLink>
+            <AnchorLink href="#allReviews">
+                <button>See All Reviews</button>
+            </AnchorLink>
+        </div>
+        <WelcomePage></WelcomePage>
     </div>
-    );
+  );
 }
- 
+
 export default App;
