@@ -23,7 +23,7 @@ export default function Review({id}) {
     async function fetchReviews() {    
         //query the collection reviews from our firestore instance
         //get only the reviews for the given id
-        const q = query(collection(firestore, "Collection"), where("id", "==", id));
+        const q = query(collection(firestore, "Collection"), where("id", "==", "1s"));
         //an array of documents with the reviews are returned
         const querySnapshot = await getDocs(q);
         const r=[]

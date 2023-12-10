@@ -1,10 +1,10 @@
-import './App.css';
+
 import { useState } from 'react';
 import { firestore } from "./firebase";
 import Review from './Review';
 import { addDoc, collection } from "@firebase/firestore";
 
-function ClassDetails({id,name, pic, description, size}) {
+function ClassDetails({id}) {
   //state variable to hold the review entered into the textarea
   //needs to be state variable because it updates every time the user enters a keyboard stroke
   const [review, setReview] = useState("");
@@ -24,19 +24,20 @@ function ClassDetails({id,name, pic, description, size}) {
   }
 
   return (
-    <div className="App">
+    <div>
       <div>
         <h2>
-      {name}
+      {id}
+      
       </h2>
       </div>
       <img style={{height: 350, width: 650}}
-      src={pic}
-      alt={name} />
+      src={id}
+      alt={id} />
         <h3>
-      {description}
+      {id}
       </h3>     
-      {size}   
+      {id}   
       <br></br>
       <br></br>
       {/* This is a form.

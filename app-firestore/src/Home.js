@@ -1,4 +1,11 @@
-export default function ListOfPeople() {
+import ClassDetails from "./ClassDetails";
+
+
+
+export default function Home() {
+
+
+
 
 
     const dataSource = [
@@ -23,6 +30,8 @@ export default function ListOfPeople() {
     <ul>
         <li> {course.title} </li>
         <li> {course.courseCode} </li>
+
+        
     </ul>);
 
 

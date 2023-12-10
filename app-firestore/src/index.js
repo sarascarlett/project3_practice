@@ -4,6 +4,7 @@ import './index.css';
 import ClassDetails from './ClassDetails';
 import Review from './Review';
 import Home from './Home';
+import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 var rentalInfo = {name: 'Casa Era Ora', pic: "https://a0.muscache.com/im/pictures/3542b90c-d817-44ef-a4df-fef3578b2735.jpg?im_w=960",
@@ -14,7 +15,8 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
       <Home />
-  </React.StrictMode> 
+  </React.StrictMode>
+  
 );
 
 // If you want to start measuring performance in your app, pass a function
