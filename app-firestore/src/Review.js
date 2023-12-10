@@ -7,9 +7,9 @@ import {
     getDocs,
 } from 'firebase/firestore';
 
-export default function Review({id}) {  
+export default function Review({code}) {  
     /*The state variable hold the array of reviews fetched from the Firestore database */
-    const [reviews, setReviews]=useState([]); 
+    const [reviews, setReviews]=useState([]);
 
     /* We'll learn more about the useEffect hook when we look at React Native
        useEffect() is a function that is executed BEFORE the React component is
@@ -23,7 +23,7 @@ export default function Review({id}) {
     async function fetchReviews() {    
         //query the collection reviews from our firestore instance
         //get only the reviews for the given id
-        const q = query(collection(firestore, "Collection"), where("id", "==", "1s"));
+        const q = query(collection(firestore, "Collection"), where("code", "==", code));
         //an array of documents with the reviews are returned
         const querySnapshot = await getDocs(q);
         const r=[]
@@ -37,15 +37,16 @@ export default function Review({id}) {
         //setReviews([...reviews , ...r]);   
         //add the array of reviews gotten from firestore to any reviews we already have
         setReviews(reviews.concat(r));
-        console.log(reviews);
     }
     return (
         <div className="App">
+            <div>
          { /* Use the map function to display the reviews in the reviews array  */ }
         {
-            reviews.map((review) =>
-             <p>{review}</p>)
+                reviews.map((review) =>
+                 <p>{review}</p>)
         }
+        </div>
         
     </div>    
   );

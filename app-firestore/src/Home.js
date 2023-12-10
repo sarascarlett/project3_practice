@@ -3,9 +3,9 @@ import React from 'react';
 export default function ListOfClasses() {
     const dataSource = [
         { title: "Algorithms and Data Structures I ", courseCode: "CSC 1051" },
-        { title: "The Enrichment Seminar", courseCode: "CSC 1990" },
+        { title: "The Enrichment Seminar", courseCode: "CSC 1990"},
         { title: "Algorithms and Data Structures II", courseCode: "CSC 1052" },
-        { title: "Discrete Structures", courseCode: "CSC 1300" },
+        { title: "Discrete Structures", courseCode: "CSC 1300"},
         { title: "Computing Systems I ", courseCode: "CSC 2400" },
         { title: "Platform Based Computing", courseCode: "CSC 2053" },
         { title: "Statistics for Computing", courseCode: "CSC 2300" },
