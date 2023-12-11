@@ -6,6 +6,58 @@ import {
     where,
     getDocs,
 } from 'firebase/firestore';
+import EmptyStar from './empty_star.png';
+import FilledStar from './full_star.png';
+import './index.css';
+
+function Stars({ code }) {
+    const [stars, setStars] = useState([]);
+    const [rating, setRating] = useState();
+    const [average, setAverage] = useState();
+
+    useEffect(() => {
+        fetchReviews();
+    }, []);
+
+    async function fetchReviews() {
+        const q = query(collection(firestore, "Collection"), where("code", "==", code));
+        const querySnapshot = await getDocs(q);
+        const star = [];
+        querySnapshot.forEach((doc) => {
+            star.push(doc.data().rating);
+        });
+        console.log(star);
+
+        setStars(star);
+        var rating = 0;
+        for (let i = 0; i < star.length; i++) {
+            rating = rating + parseInt(star[i]);
+        }
+        var average = rating/star.length;
+        console.log(rating);
+        console.log(average);
+
+        const starElements = [...Array(5).keys()].map((index) => (
+            <img
+                key={index}
+                data-value={index + 1}
+                className="star"
+                src={index + 1 <= average ? FilledStar : EmptyStar}
+                alt={index + 1 <= average ? "filled star" : "empty star"}
+            />
+        ));
+
+        // Now set the stars to the state
+        setStars(starElements);
+    }
+
+    return (
+        <div>
+            {stars}
+        </div>
+    );
+}
+
 
 export default function Review({code}) {  
     /*The state variable hold the array of reviews fetched from the Firestore database */
@@ -41,15 +93,21 @@ export default function Review({code}) {
     return (
         <div className="App">
             <div>
+    <Stars code = {code}/>
+</div>
+<br></br>
+            <div>
          { /* Use the map function to display the reviews in the reviews array  */ }
-        {
+                {
                 reviews.map((review) =>
                  <li>
                     {review}
                  </li>)
-        }
+}
+
+                 
+        </div>
         </div>
         
-    </div>    
   );
 }

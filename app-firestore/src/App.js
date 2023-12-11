@@ -18,6 +18,7 @@ function App() {
             <AnchorLink href="#submitReview">
                 <Button>Submit a Review</Button>
             </AnchorLink>
+            &nbsp;
             <AnchorLink href="#allReviews">
                 <Button>See All Reviews</Button>
             </AnchorLink>
