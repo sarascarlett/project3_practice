@@ -14,8 +14,6 @@ const SubmitReview = () => {
     const myCollection = collection(firestore, 'Collection');
 
     function handleSubmit(e) {
-        console.log(starRating);
-        console.log("hey");
         //this function prevents any default behavior the browser may have to a particular event.
         const data = {
             code: code,
@@ -24,6 +22,7 @@ const SubmitReview = () => {
         };
         addDoc(myCollection, data);
        e.preventDefault();
+       setReview("");
         
       }
 
